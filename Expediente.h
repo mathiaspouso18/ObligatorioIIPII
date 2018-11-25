@@ -2,9 +2,9 @@
 #define EXPEDIENTE_H_INCLUDED
 #include "Escribano.h"
 
-typedef struct Expediente{int codigo;
+typedef struct {int codigo;
                           /*Caratula??*/
                           Escribano esc;
-                          int cantPags;};
+                          int cantPags;}Expediente;
 
 #endif // EXPEDIENTE_H_INCLUDED

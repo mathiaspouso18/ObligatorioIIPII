@@ -4,9 +4,9 @@
 #include "String.h"
 #include "Evaluacion.h"
 
-typedef struct Revision{Fecha fecRea;
+typedef struct {Fecha fecRea;
                         String descripcion;
                         int codigoExp;
-                        Evaluacion eval;};
+                        Evaluacion eval;}Revision ;
 
 #endif // REVISION_H_INCLUDED

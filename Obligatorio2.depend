@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1353751060 source:f:\codeblocks projects\obligatorioiipii\main.cpp
+	<iostream>
+
+1543165349 source:f:\codeblocks projects\obligatorioiipii\fecha.cpp
+	"Fecha.h"
+
+1543165290 f:\codeblocks projects\obligatorioiipii\fecha.h
+
+1543167128 source:f:\codeblocks projects\obligatorioiipii\boolean.cpp
+	"Boolean.h"
+
+1543167121 f:\codeblocks projects\obligatorioiipii\boolean.h
+
+1543167678 source:f:\codeblocks projects\obligatorioiipii\string.cpp
+	"String.h"
+
+1543167696 f:\codeblocks projects\obligatorioiipii\string.h
+	<stdio.h>
+

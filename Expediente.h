@@ -8,6 +8,7 @@ typedef struct {int codigo;
                int cantPags;
                }Expediente;
 
+//PRECONDICION: El expediente no puede existir previamente.
 void CrearExpediente(Expediente &ex, int cod);
 
 int DarCodigo(Expediente ex);

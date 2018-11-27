@@ -1,5 +1,4 @@
 #include "Expediente.h"
-#include "Boolean.h"
 
 void CrearExpediente(Expediente &ex, int cod)
 {

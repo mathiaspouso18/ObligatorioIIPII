@@ -2,7 +2,6 @@
 #define ABBEXPEDIENTE_H_INCLUDED
 
 #include "Expediente.h"
-#include "Boolean.h"
 
 typedef struct nodoN{Expediente info;
                     nodoN *hizq;

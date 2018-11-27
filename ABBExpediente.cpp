@@ -74,3 +74,59 @@ void InsertarNodo(Arbol &ABB, Expediente ex)
             InsertarNodo (ABB -> hder, ex);
     }
 }
+
+Expediente Minimo (Arbol ABB)
+{
+	if (ABB -> hizq == NULL)
+		return (ABB->info);
+	else
+		return Minimo (ABB -> hizq);
+} 
+
+void Borrar_Minimo (Arbol &ABB)
+{
+	Arbol aux;
+	if (ABB -> hizq == NULL)
+	{
+		aux = ABB -> hder;
+		delete ABB;
+		ABB = aux;
+	}
+	else
+		Borrar_Minimo (ABB -> hizq);
+} 
+
+void Borrar (Arbol &ABB, int cod)
+{
+	Arbol aux;
+	if (cod == DarCodigo(ABB -> info))
+	{
+		if (ABB -> hder == NULL)
+		{
+			aux = ABB -> hizq;
+			delete ABB;
+			ABB = aux;
+		}
+		else
+		{
+			if (ABB -> hizq == NULL)
+			{
+				aux = ABB -> hder;
+				delete ABB;
+				ABB = aux;
+			}
+			else
+			{
+				ABB -> info = Minimo (ABB -> hder);
+				Borrar_Minimo (ABB -> hder);
+			}
+		}
+	}
+	else
+	{
+		if (cod < DarCodigo(ABB -> info))
+			Borrar (ABB -> hizq, cod);
+		else
+			Borrar (ABB -> hder, cod);
+	}
+ }

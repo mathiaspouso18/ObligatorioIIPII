@@ -4,14 +4,41 @@ Fecha DarFecha(Revision rev){
 	return rev.fecRea;
 }
 
-String DarDesc(Revision rev){
-	return rev.descripcion;
+void DarDesc(Revision rev, String &desc){
+	strcop(desc, rev.descripcion);
 }
 
-int DarCodExp(Revision rev){
+int DarCodExpEnRev(Revision rev){
 	return rev.codigoExp;
 }
 
 Evaluacion DarEv(Revision rev){
 	return rev.eval;
+}
+
+void CrearRevision(Revision &r, int cod, Fecha f)
+{
+    int a;
+    String s;
+    Evaluacion eva;
+    //printf("Ingrese la fecha para la revision");
+    //CargarFecha(f);
+    printf("Ingrese la descripcion: ");
+    scan(s);
+    printf("Ingrese evaluacion: ");
+    scanf("%d", &a);
+    switch(a)
+    {
+        case 1: eva = Satisfactoria;
+        break;
+        case 2: eva = Incompleta;
+        break;
+        case 3: eva = Pendiente;
+        break;
+    }
+
+    r.fecRea = f;
+    r.codigoExp = cod;
+    r.eval = eva;
+    strcop(r.descripcion, s);
 }

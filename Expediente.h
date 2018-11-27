@@ -3,15 +3,19 @@
 #include "Escribano.h"
 
 typedef struct {int codigo;
-               /*Caratula??*/
+               String Caratula;
                Escribano esc;
                int cantPags;
                }Expediente;
 
-int Darcodigo(Expediente ex);
+void CrearExpediente(Expediente &ex, int cod);
 
-Escribano DarEscrib(Expediente ex);
+int DarCodigo(Expediente ex);
 
-int DarCantP(Expendiente ex);
+void DarNombreEscrib(Expediente ex, String &nombre);
+
+void DarApellidoEscrib(Expediente ex, String &apellido);
+
+int DarCantP(Expediente ex);
 
 #endif // EXPEDIENTE_H_INCLUDED

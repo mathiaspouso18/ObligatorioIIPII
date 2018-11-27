@@ -10,11 +10,13 @@ typedef struct {Fecha fecRea;
                 Evaluacion eval;
                }Revision ;
 
+void CrearRevision(Revision &r);
+
 Fecha DarFecha(Revision rev);
 
-String DarDesc(Revision rev);
+void DarDesc(Revision rev, String &desc);
 
-int DarCodExp(Revision rev);
+int DarCodExpEnRev(Revision rev);
 
 Evaluacion DarEv(Revision rev);
 

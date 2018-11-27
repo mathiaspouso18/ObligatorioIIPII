@@ -32,6 +32,22 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="ABBExpediente.cpp" />
+		<Unit filename="ABBExpediente.h" />
+		<Unit filename="Boolean.cpp" />
+		<Unit filename="Boolean.h" />
+		<Unit filename="Escribano.cpp" />
+		<Unit filename="Escribano.h" />
+		<Unit filename="Evaluacion.cpp" />
+		<Unit filename="Evaluacion.h" />
+		<Unit filename="Expediente.cpp" />
+		<Unit filename="Expediente.h" />
+		<Unit filename="Fecha.cpp" />
+		<Unit filename="Fecha.h" />
+		<Unit filename="Revision.cpp" />
+		<Unit filename="Revision.h" />
+		<Unit filename="String.cpp" />
+		<Unit filename="String.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

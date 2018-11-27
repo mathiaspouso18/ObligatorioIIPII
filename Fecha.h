@@ -8,5 +8,6 @@ typedef struct  {int dia;
 int DarDia(Fecha f);
 int DarMes(Fecha f);
 int DarAnio(Fecha f);
+void CargarFecha(Fecha &f);
 
 #endif // FECHA_H_INCLUDED

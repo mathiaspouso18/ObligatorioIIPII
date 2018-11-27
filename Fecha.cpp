@@ -1,5 +1,4 @@
 #include "Fecha.h"
-#include "Boolean.h"
 
 int DarDia(Fecha f)
 {

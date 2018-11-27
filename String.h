@@ -2,11 +2,12 @@
 #define STRING_H_INCLUDED
 
 #include <stdio.h>
+#include "Boolean.h"
 
 const int MAX = 80;
 typedef char * String;
 
-/* crea un string vacío */
+/* crea un string vacÃ­o */
 void strcrear (String &s);
 
 /* libera la memoria usada por el string */

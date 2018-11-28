@@ -48,7 +48,7 @@ int main()
                         }
                         else
                         {
-                            printf("La fecha es menor a la de la ultima revisión ingresada");
+                            printf("La fecha es menor a la de la ultima revision ingresada");
                         }
 					}
 					else
@@ -73,6 +73,34 @@ int main()
                 else
                 {
                     printf("El expediente no existe!");//Deberia volver al case 3?
+                }
+			break;
+			case 4:
+				ListarExp(ABB);
+			break;
+			case 5:
+				ListarRev(Lis);
+			break;
+			case 6:
+				ListarMinMax(ABB);
+			break;
+			case 7:
+				printf("Ingrese codigo del expediente: ");
+                scanf("%d", &cod);
+				if(ExisteExp(cod, ABB))
+                {
+					if(TieneRev (Lis, cod))
+					{
+						ListarRevxExp(Lis, cod);
+					}
+					else
+					{
+						printf("No se encontraron revisiones para dicho expediente");
+					}
+				}
+                else
+                {
+                    printf("El expediente no existe!");
                 }
 			break;
         }

@@ -6,12 +6,16 @@ typedef Nodo * ListRev;
 
 void Crear(ListRev &lis);
 
+int DarAnioRev(Revision r);
+int DarMesRev(Revision r);
+int DarDiaRev(Revision r);
+
 Boolean EsVaciaLis (ListRev lis);
 
-/* PrecondiciÛn: lista NO vacÌa */
+/* Precondici√≥n: lista NO vac√≠a */
 Revision Primero(ListRev lis);
 
-/* PrecondiciÛn: lista NO vacÌa */
+/* Precondici√≥n: lista NO vac√≠a */
 void Resto (ListRev &lis);
 
 void InsFront (ListRev &lis, Revision rev);
@@ -21,6 +25,10 @@ Boolean EsValidaSis(ListRev lis, Fecha f);
 
 void BorrarRev (ListRev &lis, int cod);
 
-int DarAnioRev(Revision r);
-int DarMesRev(Revision r);
-int DarDiaRev(Revision r);
+void ListarRev (ListRev lis);
+
+/* Precondici√≥n: lista NO vac√≠a */
+Boolean TieneRev (ListRev lis, int cod);
+
+/*Precondicion: el expediente debe existir en el sistema y debe tener al menos una revision*/
+void ListarRevxExp(ListRev lis, int cod);

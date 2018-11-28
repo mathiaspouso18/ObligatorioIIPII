@@ -20,7 +20,7 @@ int strlar (String s){
 void strcop (String &s1,String s2){
     int i = 0;
     int largo = strlar(s2) + 1;
-    delete [] s1;
+    //delete [] s1;
     s1 = new char[largo];
     while (s2[i] != '\0')
     {

@@ -15,20 +15,20 @@ void MenuPrincipal(int &opcion)
     printf("\n\t");
     printf("5 - Listar todas las revisiones realizadas");
     printf("\n\t");
-    printf("6 - Listar los datos del expediente con mayor código y del expediente con menor código");
-    printf("\n\t"); 
+    printf("6 - Listar los datos del expediente con mayor codigo y del expediente con menor codigo");
+    printf("\n\t");
     printf("7 - Listar todas las revisiones correspondientes a un expediente");
     printf("\n\t");
-    printf("8 - Dado un apellido, contar cuántos expedientes coordinados hizo");
+    printf("8 - Dado un apellido, contar cuantos expedientes coordinados hizo");
     printf("\n\t");
-    printf("9 - Obtener el código del expediente con la mayor cantidad de revisiones");
+    printf("9 - Obtener el codigo del expediente con la mayor cantidad de revisiones");
     printf("\n\t");
-    printf("10 - Dadas dos fechas, contar cuántas revisiones fueron realizadas dentro de dicho rango de fechas");
+    printf("10 - Dadas dos fechas, contar cuantas revisiones fueron realizadas dentro de dicho rango de fechas");
     printf("\n\t");
-    printf("11 - Calcular cuántas revisiones de cada tipo hay registradas en el sistema");
+    printf("11 - Calcular cuantas revisiones de cada tipo hay registradas en el sistema");
     printf("\n\t");
     printf("0 - Salir ");
-    printf("\n\t");
+    printf("\n\n");
     printf("Ingrese una opcion: ");
     scanf("%d", &opcion);
 }

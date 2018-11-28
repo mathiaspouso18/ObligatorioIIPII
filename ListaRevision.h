@@ -6,7 +6,7 @@ typedef Nodo * ListRev;
 
 void Crear(ListRev &lis);
 
-Boolean Vacia (ListRev lis);
+Boolean EsVaciaLis (ListRev lis);
 
 /* Precondición: lista NO vacía */
 Revision Primero(ListRev lis);
@@ -20,3 +20,7 @@ void InsFront (ListRev &lis, Revision rev);
 Boolean EsValidaSis(ListRev lis, Fecha f);
 
 void BorrarRev (ListRev &lis, int cod);
+
+int DarAnioRev(Revision r);
+int DarMesRev(Revision r);
+int DarDiaRev(Revision r);

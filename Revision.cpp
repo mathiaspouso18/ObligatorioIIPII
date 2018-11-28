@@ -21,11 +21,9 @@ void CrearRevision(Revision &r, int cod, Fecha f)
     int a;
     String s;
     Evaluacion eva;
-    //printf("Ingrese la fecha para la revision");
-    //CargarFecha(f);
     printf("Ingrese la descripcion: ");
     scan(s);
-    printf("Ingrese evaluacion: ");
+    printf("Ingrese evaluacion 1-Satisfactoria; 2-Incompleta; 3-Pendiente: ");
     scanf("%d", &a);
     switch(a)
     {

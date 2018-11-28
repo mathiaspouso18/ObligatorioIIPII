@@ -10,5 +10,6 @@ typedef struct {
 
 void DarNombre(Escribano esc, String &nom);
 void DarApellido(Escribano esc, String &ape);
+void CrearEscribano(Escribano &esc);
 
 #endif // ESCRIBANO_H_INCLUDED

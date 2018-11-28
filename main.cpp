@@ -14,7 +14,6 @@ int main()
     InicializarArbol(ABB);
 	Crear(Lis);
 
-    
     do
     {
         MenuPrincipal(opcion);
@@ -31,7 +30,7 @@ int main()
                 }
                 else
                 {
-                    printf("El expediente ya existe!");//Deberia volver al case 2?
+                    printf("\n\nEl expediente ya existe!");//Deberia volver al case 2?
                 }
             break;
 			case 2:
@@ -40,18 +39,27 @@ int main()
 				if(ExisteExp(cod, ABB))
                 {
 					CargarFecha(f);
-					if(EsValidaSis(Lis, f)){
-						CrearRevision(rev, cod, f);
-						InsFront (Lis, rev);
+					if(!EsVaciaLis(Lis))
+                    {
+                        if(EsValidaSis(Lis, f))
+                        {
+                            CrearRevision(rev, cod, f);
+                            InsFront (Lis, rev);
+                        }
+                        else
+                        {
+                            printf("La fecha es menor a la de la ultima revisión ingresada");
+                        }
 					}
 					else
-					{
-						printf("La fecha es menor a la de la ultima revisión ingresada");//Deberia volver al case 2?
-					}
+                    {
+                        CrearRevision(rev, cod, f);
+                        InsFront (Lis, rev);
+                    }
                 }
                 else
                 {
-                    printf("El expediente no existe!");//Deberia volver al case 2?
+                    printf("El expediente no existe!");
                 }
 			break;
 			case 3:

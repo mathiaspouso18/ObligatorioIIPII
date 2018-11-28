@@ -10,7 +10,7 @@ typedef struct {Fecha fecRea;
                 Evaluacion eval;
                }Revision ;
 
-void CrearRevision(Revision &r);
+void CrearRevision(Revision &r, int cod, Fecha f);
 
 Fecha DarFecha(Revision rev);
 

@@ -15,7 +15,7 @@ int DarAnio(Fecha f)
     return f.anio;
 }
 
-void CargaFecha(Fecha &f)
+void CargarFecha(Fecha &f)
 {
     Fecha f2;
 

@@ -26,3 +26,70 @@
 
 1543172017 source:f:\codeblocks projects\obligatorioiipii\revision.cpp
 
+1543331642 source:c:\users\java\desktop\obligatorioiipii-master\abbexpediente.cpp
+	"ABBExpediente.h"
+
+1543331642 c:\users\java\desktop\obligatorioiipii-master\abbexpediente.h
+	"Expediente.h"
+
+1543331642 c:\users\java\desktop\obligatorioiipii-master\expediente.h
+	"Escribano.h"
+
+1543361607 c:\users\java\desktop\obligatorioiipii-master\escribano.h
+	"String.h"
+
+1543331642 c:\users\java\desktop\obligatorioiipii-master\string.h
+	<stdio.h>
+	"Boolean.h"
+
+1543331642 c:\users\java\desktop\obligatorioiipii-master\boolean.h
+
+1543331642 source:c:\users\java\desktop\obligatorioiipii-master\boolean.cpp
+	"Boolean.h"
+
+1543361892 source:c:\users\java\desktop\obligatorioiipii-master\escribano.cpp
+	"Escribano.h"
+
+1543331642 source:c:\users\java\desktop\obligatorioiipii-master\evaluacion.cpp
+	"Evaluacion.h"
+
+1543331642 c:\users\java\desktop\obligatorioiipii-master\evaluacion.h
+
+1543361628 source:c:\users\java\desktop\obligatorioiipii-master\expediente.cpp
+	"Expediente.h"
+
+1543360776 source:c:\users\java\desktop\obligatorioiipii-master\fecha.cpp
+	"Fecha.h"
+
+1543331642 c:\users\java\desktop\obligatorioiipii-master\fecha.h
+	<stdio.h>
+	"Boolean.h"
+
+1543363968 source:c:\users\java\desktop\obligatorioiipii-master\listarevision.cpp
+	"ListaRevision.h"
+
+1543363964 c:\users\java\desktop\obligatorioiipii-master\listarevision.h
+	"Revision.h"
+
+1543360694 c:\users\java\desktop\obligatorioiipii-master\revision.h
+	"Fecha.h"
+	"String.h"
+	"Evaluacion.h"
+
+1543364300 source:c:\users\java\desktop\obligatorioiipii-master\main.cpp
+	"ABBExpediente.h"
+	"ListaRevision.h"
+	"Menu.h"
+
+1543331642 c:\users\java\desktop\obligatorioiipii-master\menu.h
+	<stdio.h>
+
+1543364355 source:c:\users\java\desktop\obligatorioiipii-master\revision.cpp
+	"Revision.h"
+
+1543361205 source:c:\users\java\desktop\obligatorioiipii-master\string.cpp
+	"String.h"
+
+1543360862 source:c:\users\java\desktop\obligatorioiipii-master\menu.cpp
+	"Menu.h"
+

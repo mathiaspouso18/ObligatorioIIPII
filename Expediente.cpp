@@ -2,6 +2,14 @@
 
 void CrearExpediente(Expediente &ex, int cod)
 {
+    Escribano esc;
+    ex.codigo = cod;
+    printf("Ingrese caratula: ");
+    scan(ex.Caratula);
+    printf("Ingrese cantidad de paginas: ");
+    scanf("%d", &ex.cantPags);
+    CrearEscribano(esc);
+    ex.esc = esc;
 }
 
 int DarCodigo(Expediente ex){

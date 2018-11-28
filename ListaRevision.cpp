@@ -1,5 +1,20 @@
 #include "ListaRevision.h"
 
+int DarAnioRev(Revision r)
+{
+    return DarAnio(r.fecRea);
+}
+
+int DarMesRev(Revision r)
+{
+    return DarMes(r.fecRea);
+}
+
+int DarDiaRev(Revision r)
+{
+    return DarDia(r.fecRea);
+}
+
 void Crear(ListRev &lis)
 {
 	lis = NULL;
@@ -72,17 +87,100 @@ void BorrarRev (ListRev &lis, int cod)
 	}
 }
 
-int DarAnioRev(Revision r)
+void ListarRev (ListRev lis)
 {
-    return DarAnio(r.fecRea);
+	String desc;
+	if(lis == NULL)
+	{
+		printf("\tNo hay revisiones registradas\n");
+	}
+	else
+	{
+		while(lis!=NULL)
+		{
+			printf("\t");
+			printf("Fecha: %d/%d/%d",DarFecha(lis->info));
+			printf(" | ");
+			printf("Descripcion: ");
+			DarDesc(lis->info,desc);
+			print(desc);
+			printf(" | ");
+			printf("Codigo expediente: %d",DarCodExpEnRev(lis->info));
+			printf(" | ");
+			printf("Evaluacion: ");
+			if(DarEv(lis->info) == Satisfactoria)
+			{
+				printf("Satisfactoria");
+			}
+			else
+			{
+				if(DarEv(lis->info) == Incompleta)
+				{
+					printf("Incompleta");
+				}
+				else
+				{
+					printf("Pendiente");
+				}
+
+			}
+			printf("\n");
+
+			lis = lis->sig;
+		}
+
+	}
+	
 }
 
-int DarMesRev(Revision r)
+Boolean TieneRev (ListRev lis, int cod)
 {
-    return DarMes(r.fecRea);
+	Boolean existe = FALSE;
+	while(lis != NULL && !existe)
+	{
+		if(DarCodExpEnRev(lis->info) == cod)
+			existe = TRUE;
+		lis = lis->sig;
+	}
+
+	return existe;
 }
 
-int DarDiaRev(Revision r)
+void ListarRevxExp(ListRev lis, int cod)
 {
-    return DarDia(r.fecRea);
+	String desc;
+	while(lis!=NULL)
+	{
+		if(DarCodExpEnRev(lis->info) == cod)
+		{
+			printf("\t");
+			printf("Fecha: %d/%d/%d",DarFecha(lis->info));
+			printf(" | ");
+			printf("Descripcion: ");
+			DarDesc(lis->info,desc);
+			print(desc);
+			printf(" | ");
+			printf("Codigo expediente: %d",cod);
+			printf(" | ");
+			printf("Evaluacion: ");
+			if(DarEv(lis->info) == Satisfactoria)
+			{
+				printf("Satisfactoria");
+			}
+			else
+			{
+				if(DarEv(lis->info) == Incompleta)
+				{
+					printf("Incompleta");
+				}
+				else
+				{
+					printf("Pendiente");
+				}
+			}
+			printf("\n");
+			
+			lis = lis->sig;
+		}
+	}
 }

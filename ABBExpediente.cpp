@@ -75,6 +75,14 @@ void InsertarNodo(Arbol &ABB, Expediente ex)
     }
 }
 
+Expediente Maximo (Arbol ABB)
+{
+	if (ABB -> hder == NULL)
+		return (ABB->info);
+	else
+		return Maximo(ABB -> hder);
+} 
+
 Expediente Minimo (Arbol ABB)
 {
 	if (ABB -> hizq == NULL)
@@ -130,3 +138,75 @@ void Borrar (Arbol &ABB, int cod)
 			Borrar (ABB -> hder, cod);
 	}
  }
+
+void ListarExp(Arbol ABB)
+{
+	String caratula, nom, ape;
+	if (ABB != NULL)
+	{
+		ListarExp(ABB -> hizq);
+
+		printf("\t");
+		printf("Codigo expediente: %d",DarCodigo(ABB ->info));
+		printf(" | ");
+		printf("Caratula: ");
+		DarCaratula(ABB ->info, caratula);
+		print(caratula);
+		printf(" | ");
+		printf("Escribano: ");
+		DarNombreEscrib(ABB ->info, nom);
+		DarApellidoEscrib(ABB ->info, ape);
+		print(nom);
+		printf(" ");
+		print(ape);
+		printf(" | ");
+		printf("Cant. Pag: %d", DarCantP(ABB ->info));			
+		printf("\n");
+
+		ListarExp(ABB -> hder);
+	} 
+}
+
+void ListarMinMax(Arbol ABB)
+{
+	String caratula, nom, ape;
+	Expediente exmin, exmax;
+
+	exmin = Minimo(ABB);
+
+	printf("\t");
+	printf("Codigo expediente: %d",exmin);
+	printf(" | ");
+	printf("Caratula: ");
+	DarCaratula(exmin, caratula);
+	print(caratula);
+	printf(" | ");
+	printf("Escribano: ");
+	DarNombreEscrib(exmin, nom);
+	DarApellidoEscrib(exmin, ape);
+	print(nom);
+	printf(" ");
+	print(ape);
+	printf(" | ");
+	printf("Cant. Pag: %d", DarCantP(exmin));			
+	printf("\n");
+
+	exmax = Maximo(ABB);
+
+	printf("\t");
+	printf("Codigo expediente: %d",exmax);
+	printf(" | ");
+	printf("Caratula: ");
+	DarCaratula(exmax, caratula);
+	print(caratula);
+	printf(" | ");
+	printf("Escribano: ");
+	DarNombreEscrib(exmax, nom);
+	DarApellidoEscrib(exmax, ape);
+	print(nom);
+	printf(" ");
+	print(ape);
+	printf(" | ");
+	printf("Cant. Pag: %d", DarCantP(exmax));			
+	printf("\n");
+}

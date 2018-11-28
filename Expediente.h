@@ -13,6 +13,8 @@ void CrearExpediente(Expediente &ex, int cod);
 
 int DarCodigo(Expediente ex);
 
+void DarCaratula(Expediente ex, String &caratula);
+
 void DarNombreEscrib(Expediente ex, String &nombre);
 
 void DarApellidoEscrib(Expediente ex, String &apellido);

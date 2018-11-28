@@ -26,6 +26,9 @@ void Cons(Arbol i, Arbol d, int valor, Arbol &ABB);
 void InsertarNodo(Arbol &ABB, Expediente ex);
 
 /* PRECONDICION: ABB no vacio */
+Expediente Maximo (Arbol ABB);
+
+/* PRECONDICION: ABB no vacio */
 Expediente Minimo (Arbol ABB);
 
 /* Precondición : el árbol a NO está vacío */
@@ -33,5 +36,10 @@ void Borrar_Minimo (Arbol &ABB);
 
 /* Precondición : el valor cod existe en el árbol a */
 void Borrar (Arbol &ABB, int cod);
+
+/*Precodicion: ABB no vacio */
+void ListarExp(Arbol ABB);
+
+void ListarMinMax(Arbol ABB);
 
 #endif // ABBEXPEDIENTE_H_INCLUDED

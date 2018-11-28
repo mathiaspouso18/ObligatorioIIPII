@@ -12,8 +12,14 @@ void CrearExpediente(Expediente &ex, int cod)
     ex.esc = esc;
 }
 
-int DarCodigo(Expediente ex){
+int DarCodigo(Expediente ex)
+{
 	return ex.codigo;
+}
+
+void DarCaratula(Expediente ex, String &caratula)
+{
+	strcop(caratula, ex.Caratula);
 }
 
 void DarNombreEscrib(Expediente ex, String &nombre)

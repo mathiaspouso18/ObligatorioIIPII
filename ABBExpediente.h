@@ -42,4 +42,13 @@ void ListarExp(Arbol ABB);
 
 void ListarMinMax(Arbol ABB);
 
+/*Precodicion: ABB no vacio */
+int ExpxEscribano(Arbol ABB, String ape);
+
+void Bajar_ABB_Aux (Arbol ABB, FILE * f);
+
+void Bajar_ABB (Arbol ABB , String nomArch);
+
+void Levantar_ABB (Arbol &ABB, String nomArch);
+
 #endif // ABBEXPEDIENTE_H_INCLUDED

@@ -2,17 +2,19 @@
 #include "ListaRevision.h"
 #include "Menu.h"
 
-
 int main()
 {
     Arbol ABB;
 	ListRev Lis;
     Expediente ex;
 	Revision rev;
-    int cod, opcion;
+    int cod, opcion, Satis, inComp, Pend, cantExp;
+	String ape;
 	Fecha f;
     InicializarArbol(ABB);
+	Levantar_ABB (ABB, "Expedientes.dat");
 	Crear(Lis);
+	Levantar_Lista (Lis, "Revisiones.dat");
 
     do
     {
@@ -103,9 +105,36 @@ int main()
                     printf("El expediente no existe!");
                 }
 			break;
+			case 8:
+				printf("Ingrese el apellido del escribano: ");
+                scan(ape);
+				cantExp = ExpxEscribano(ABB, ape);
+				if(cantExp > 0)
+				{
+					printf("La cantidad de expedientes realizados por dicho escribano es de: %d", cantExp);
+				}
+				else
+				{
+					printf("No se encontraron expedientes para dicho escribano");
+				}
+			break;
+			case 11:
+				if(!EsVaciaLis(Lis))
+				{
+					RevxEvaluacion(Lis, Satis, inComp, Pend);
+					printf("\nSatisfactorias: %d | Incompletas: %d | Pendientes: %d",Satis,inComp,Pend);
+				}
+				else
+				{
+					printf("No existen revisiones ingresadas en el sistema");
+				}
+			break;
         }
 
     }while(opcion != 0);
 
     opcion = -1;//limpio la variable dejandola en -1;
+
+	Bajar_ABB (ABB, "Expedientes.dat");
+	Bajar_Lista (Lis , "Revisiones.dat");
 }

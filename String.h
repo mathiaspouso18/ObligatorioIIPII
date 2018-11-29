@@ -31,4 +31,10 @@ void strswp (String &s1, String &s2);
 /* imprime el string s por pantalla */
 void print (String s);
 
+Boolean streq(String s1, String s2);
+
+void Bajar_String (String s, FILE * f) ;
+
+void Levantar_String (String &s, FILE * f);
+
 #endif // STRING_H_INCLUDED

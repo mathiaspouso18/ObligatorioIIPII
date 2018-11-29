@@ -184,3 +184,51 @@ void ListarRevxExp(ListRev lis, int cod)
 		}
 	}
 }
+
+void RevxEvaluacion(ListRev lis, int &Satis, int &inComp, int &Pend)
+{
+	Satis = 0, inComp = 0, Pend = 0;
+	while(lis != NULL)
+	{
+		if(DarEv(lis->info) == Satisfactoria)
+			{
+				Satis++;;
+			}
+			else
+			{
+				if(DarEv(lis->info) == Incompleta)
+				{
+					inComp++;
+				}
+				else
+				{
+					Pend++;
+				}
+			}			
+		lis = lis->sig;
+	}
+}
+
+void Bajar_Lista (ListRev lis , String nomArch) 
+{
+	FILE * f = fopen (nomArch, "wb");
+	while (lis != NULL)
+	{
+		Bajar_Revision (lis -> info, f);
+		lis = lis -> sig;
+	}
+	fclose (f);
+}
+
+void Levantar_Lista (ListRev &lis, String nomArch)
+{
+	FILE * f = fopen (nomArch, "rb");
+	Revision buffer;
+	Levantar_Revision (buffer, f);
+	 while (!feof(f))
+	{
+		InsFront (lis, buffer);
+		Levantar_Revision (lis->info, f);
+	}
+	fclose (f);
+} 

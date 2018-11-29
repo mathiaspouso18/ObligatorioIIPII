@@ -210,3 +210,47 @@ void ListarMinMax(Arbol ABB)
 	printf("Cant. Pag: %d", DarCantP(exmax));			
 	printf("\n");
 }
+
+int ExpxEscribano(Arbol ABB, String ape)
+{
+	if (ABB == NULL)
+		return 0;
+	else
+	{
+		String apeexp;
+		DarApellidoEscrib(ABB->info, apeexp);
+		if(streq(apeexp, ape))
+		{
+			return 1 + ExpxEscribano(ABB->hizq, ape) + ExpxEscribano(ABB->hder, ape); 
+		}
+	}
+}
+
+void Bajar_ABB_Aux (Arbol ABB, FILE * f)
+{
+	if (ABB != NULL)
+	{
+		Bajar_Expediente (ABB->info, f); 
+		Bajar_ABB_Aux (ABB -> hizq, f);
+		Bajar_ABB_Aux (ABB -> hder, f);
+	}
+}
+
+void Bajar_ABB (Arbol ABB, String nomArch)
+{
+	FILE * f = fopen (nomArch, "wb");
+	Bajar_ABB_Aux (ABB, f);
+	fclose (f);
+}
+
+void Levantar_ABB (Arbol &ABB, String nomArch)
+{
+	FILE * f = fopen (nomArch, "rb");
+	Expediente ex;
+	while (!feof(f))
+	{
+		Levantar_Expediente(ex, f);
+		InsertarNodo(ABB, ex);
+	}
+	fclose (f);
+}

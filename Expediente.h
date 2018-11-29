@@ -21,4 +21,8 @@ void DarApellidoEscrib(Expediente ex, String &apellido);
 
 int DarCantP(Expediente ex);
 
+void Bajar_Expediente (Expediente ex, FILE * f) ;
+
+void Levantar_Expediente (Expediente &ex, FILE * f);
+
 #endif // EXPEDIENTE_H_INCLUDED

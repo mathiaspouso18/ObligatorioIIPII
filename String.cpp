@@ -92,21 +92,21 @@ Boolean streq(String s1, String s2)
 {
 	int i = 0;
 	Boolean iguales = TRUE;
-	
+
 	while(iguales && (s1[i] != '\0') && (s2[i] != '\0'))
 	{
 		if(s1[i] != s2[i])
 			iguales = FALSE;
 		i++;
 	}
-	
+
 	if((s1[i] != '\0') || (s2[i] != '\0'))
 		iguales = FALSE;
-	
+
 	return iguales;
 }
 
-void Bajar_String (String s, FILE * f) 
+void Bajar_String (String s, FILE * f)
 {
  int i=0;
  while (s[i] != '\0')
@@ -116,7 +116,7 @@ void Bajar_String (String s, FILE * f)
  }
  // escribo el '\0'
  fwrite (&s[i], sizeof(char), 1, f);
-} 
+}
 
 void Levantar_String (String &s, FILE * f)
 {
@@ -126,9 +126,9 @@ void Levantar_String (String &s, FILE * f)
 	 fread (&aux[i], sizeof(char), 1, f);
 	 while (!feof(f) && (aux[i] != '\0'))
 	 {
-	 i++;
-	 fread (&aux[i], sizeof(char), 1, f);
+         i++;
+         fread (&aux[i], sizeof(char), 1, f);
 	 }
 	 strcop (s, aux);
 	 delete [] aux;
-} 
+}

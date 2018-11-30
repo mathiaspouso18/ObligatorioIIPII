@@ -47,6 +47,18 @@ void InsFront (ListRev &lis, Revision rev)
 	lis = aux;
 }
 
+void InsBack (ListRev &L, Revision rev)
+{
+    if (L == NULL)
+     {
+         L = new Nodo;
+         L -> info = rev;
+         L -> sig = NULL;
+     }
+     else
+        InsBack (L -> sig, rev);
+ }
+
 Boolean EsValidaSis(ListRev lis, Fecha f)
 {
 	Boolean es = FALSE;
@@ -130,7 +142,7 @@ void ListarRev (ListRev lis)
 		}
 
 	}
-	
+
 }
 
 Boolean TieneRev (ListRev lis, int cod)
@@ -179,7 +191,7 @@ void ListarRevxExp(ListRev lis, int cod)
 				}
 			}
 			printf("\n");
-			
+
 			lis = lis->sig;
 		}
 	}
@@ -204,12 +216,12 @@ void RevxEvaluacion(ListRev lis, int &Satis, int &inComp, int &Pend)
 				{
 					Pend++;
 				}
-			}			
+			}
 		lis = lis->sig;
 	}
 }
 
-void Bajar_Lista (ListRev lis , String nomArch) 
+void Bajar_Lista (ListRev lis , String nomArch)
 {
 	FILE * f = fopen (nomArch, "wb");
 	while (lis != NULL)
@@ -227,8 +239,8 @@ void Levantar_Lista (ListRev &lis, String nomArch)
 	Levantar_Revision (buffer, f);
 	 while (!feof(f))
 	{
-		InsFront (lis, buffer);
-		Levantar_Revision (lis->info, f);
+		InsBack(lis, buffer);
+		Levantar_Revision (buffer, f);
 	}
 	fclose (f);
-} 
+}

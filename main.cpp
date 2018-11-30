@@ -12,9 +12,18 @@ int main()
 	String ape;
 	Fecha f;
     InicializarArbol(ABB);
-	Levantar_ABB (ABB, "Expedientes.dat");
+
+    if(fopen("Expedientes.dat", "rb")== NULL)
+        fopen("Expedientes.dat", "wb");
+    else
+        Levantar_ABB (ABB, "Expedientes.dat");
+
 	Crear(Lis);
-	Levantar_Lista (Lis, "Revisiones.dat");
+
+	if(fopen("Revisiones.dat", "rb")== NULL)
+        fopen("Revisiones.dat", "wb");
+    else
+        Levantar_Lista (Lis, "Revisiones.dat");
 
     do
     {

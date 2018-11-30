@@ -20,8 +20,8 @@ int DarCodExpEnRev(Revision rev);
 
 Evaluacion DarEv(Revision rev);
 
-void Bajar_Revision (Revision rev, FILE * f);
+void Bajar_Revision(Revision rev, FILE * f);
 
-void Levantar_Revision (Revision &rev, FILE * f);
+void Levantar_Revision(Revision &rev, FILE * f);
 
 #endif // REVISION_H_INCLUDED

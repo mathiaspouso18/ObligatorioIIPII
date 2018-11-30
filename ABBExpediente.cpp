@@ -81,7 +81,7 @@ Expediente Maximo (Arbol ABB)
 		return (ABB->info);
 	else
 		return Maximo(ABB -> hder);
-} 
+}
 
 Expediente Minimo (Arbol ABB)
 {
@@ -89,7 +89,7 @@ Expediente Minimo (Arbol ABB)
 		return (ABB->info);
 	else
 		return Minimo (ABB -> hizq);
-} 
+}
 
 void Borrar_Minimo (Arbol &ABB)
 {
@@ -102,7 +102,7 @@ void Borrar_Minimo (Arbol &ABB)
 	}
 	else
 		Borrar_Minimo (ABB -> hizq);
-} 
+}
 
 void Borrar (Arbol &ABB, int cod)
 {
@@ -160,11 +160,11 @@ void ListarExp(Arbol ABB)
 		printf(" ");
 		print(ape);
 		printf(" | ");
-		printf("Cant. Pag: %d", DarCantP(ABB ->info));			
+		printf("Cant. Pag: %d", DarCantP(ABB ->info));
 		printf("\n");
 
 		ListarExp(ABB -> hder);
-	} 
+	}
 }
 
 void ListarMinMax(Arbol ABB)
@@ -188,7 +188,7 @@ void ListarMinMax(Arbol ABB)
 	printf(" ");
 	print(ape);
 	printf(" | ");
-	printf("Cant. Pag: %d", DarCantP(exmin));			
+	printf("Cant. Pag: %d", DarCantP(exmin));
 	printf("\n");
 
 	exmax = Maximo(ABB);
@@ -207,7 +207,7 @@ void ListarMinMax(Arbol ABB)
 	printf(" ");
 	print(ape);
 	printf(" | ");
-	printf("Cant. Pag: %d", DarCantP(exmax));			
+	printf("Cant. Pag: %d", DarCantP(exmax));
 	printf("\n");
 }
 
@@ -221,7 +221,7 @@ int ExpxEscribano(Arbol ABB, String ape)
 		DarApellidoEscrib(ABB->info, apeexp);
 		if(streq(apeexp, ape))
 		{
-			return 1 + ExpxEscribano(ABB->hizq, ape) + ExpxEscribano(ABB->hder, ape); 
+			return 1 + ExpxEscribano(ABB->hizq, ape) + ExpxEscribano(ABB->hder, ape);
 		}
 	}
 }
@@ -230,7 +230,7 @@ void Bajar_ABB_Aux (Arbol ABB, FILE * f)
 {
 	if (ABB != NULL)
 	{
-		Bajar_Expediente (ABB->info, f); 
+		Bajar_Expediente (ABB->info, f);
 		Bajar_ABB_Aux (ABB -> hizq, f);
 		Bajar_ABB_Aux (ABB -> hder, f);
 	}
@@ -247,10 +247,11 @@ void Levantar_ABB (Arbol &ABB, String nomArch)
 {
 	FILE * f = fopen (nomArch, "rb");
 	Expediente ex;
+    Levantar_Expediente(ex, f);
 	while (!feof(f))
 	{
-		Levantar_Expediente(ex, f);
 		InsertarNodo(ABB, ex);
+		Levantar_Expediente(ex, f);
 	}
 	fclose (f);
 }

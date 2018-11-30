@@ -19,6 +19,7 @@ Revision Primero(ListRev lis);
 void Resto (ListRev &lis);
 
 void InsFront (ListRev &lis, Revision rev);
+void InsBack (ListRev &L, Revision rev);
 
 //Precondicion: debe ser una fecha valida
 Boolean EsValidaSis(ListRev lis, Fecha f);
@@ -38,4 +39,5 @@ void RevxEvaluacion(ListRev lis, int &Satis, int &inComp, int &Pend);
 
 void Bajar_Lista (ListRev lis , String nomArch);
 
+/*Precondicion: Debe existir el archivo*/
 void Levantar_Lista (ListRev &lis, String nomArch);

@@ -49,6 +49,7 @@ void Bajar_ABB_Aux (Arbol ABB, FILE * f);
 
 void Bajar_ABB (Arbol ABB , String nomArch);
 
+/*Precondicion: Debe existir el archivo.*/
 void Levantar_ABB (Arbol &ABB, String nomArch);
 
 #endif // ABBEXPEDIENTE_H_INCLUDED

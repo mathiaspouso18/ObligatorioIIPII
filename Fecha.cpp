@@ -88,3 +88,51 @@ Boolean EsValida(Fecha f)
     }
     return esValida;
 }
+
+Boolean MenorIgualFecha(Fecha f1, Fecha f2)
+{
+Boolean menorigual = FALSE;
+    if (f1.anio < f2.anio)
+        menorigual = TRUE;
+    else
+    {
+        if (f1.anio == f2.anio)
+        {
+            if (f1.mes < f2.mes)
+                menorigual = TRUE;
+            else
+            {
+                if (f1.mes == f2.mes)
+                {
+                    if (f1.dia <= f2.dia)
+                        menorigual = TRUE;
+                }
+            }
+        }
+    }
+return menorigual;
+}
+
+Boolean MayorIgualFecha(Fecha f1, Fecha f2)
+{
+Boolean mayorigual = FALSE;
+    if (f1.anio > f2.anio)
+        mayorigual = TRUE;
+    else
+    {
+        if (f1.anio == f2.anio)
+        {
+            if (f1.mes > f2.mes)
+                mayorigual = TRUE;
+            else
+            {
+                if (f1.mes == f2.mes)
+                {
+                    if (f1.dia >= f2.dia)
+                        mayorigual = TRUE;
+                }
+            }
+        }
+    }
+return mayorigual;
+}

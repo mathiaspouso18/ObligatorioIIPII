@@ -93,3 +93,70 @@
 1543504726 source:c:\users\java\desktop\obligatorioiipii-master\menu.cpp
 	"Menu.h"
 
+1543545864 source:e:\obligatorioiipii\abbexpediente.cpp
+	"ABBExpediente.h"
+
+1543545864 e:\obligatorioiipii\abbexpediente.h
+	"Expediente.h"
+
+1543545864 e:\obligatorioiipii\expediente.h
+	"Escribano.h"
+
+1543545864 e:\obligatorioiipii\escribano.h
+	"String.h"
+
+1543545864 e:\obligatorioiipii\string.h
+	<stdio.h>
+	"Boolean.h"
+
+1543545864 e:\obligatorioiipii\boolean.h
+
+1543545864 source:e:\obligatorioiipii\boolean.cpp
+	"Boolean.h"
+
+1543545864 source:e:\obligatorioiipii\escribano.cpp
+	"Escribano.h"
+
+1543545864 source:e:\obligatorioiipii\evaluacion.cpp
+	"Evaluacion.h"
+
+1543545864 e:\obligatorioiipii\evaluacion.h
+
+1543545864 source:e:\obligatorioiipii\expediente.cpp
+	"Expediente.h"
+
+1543551521 source:e:\obligatorioiipii\fecha.cpp
+	"Fecha.h"
+
+1543551301 e:\obligatorioiipii\fecha.h
+	<stdio.h>
+	"Boolean.h"
+
+1543550009 source:e:\obligatorioiipii\main.cpp
+	"ABBExpediente.h"
+	"ListaRevision.h"
+	"Menu.h"
+
+1543546188 e:\obligatorioiipii\listarevision.h
+	"Revision.h"
+
+1543545864 e:\obligatorioiipii\revision.h
+	"Fecha.h"
+	"String.h"
+	"Evaluacion.h"
+
+1543545864 e:\obligatorioiipii\menu.h
+	<stdio.h>
+
+1543545864 source:e:\obligatorioiipii\menu.cpp
+	"Menu.h"
+
+1543545864 source:e:\obligatorioiipii\revision.cpp
+	"Revision.h"
+
+1543545864 source:e:\obligatorioiipii\string.cpp
+	"String.h"
+
+1543551710 source:e:\obligatorioiipii\listarevision.cpp
+	"ListaRevision.h"
+

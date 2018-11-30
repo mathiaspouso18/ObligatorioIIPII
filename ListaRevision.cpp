@@ -244,3 +244,16 @@ void Levantar_Lista (ListRev &lis, String nomArch)
 	}
 	fclose (f);
 }
+
+int ContarRevEntreFec(ListRev l, Fecha f1, Fecha f2)
+{
+    if (l == NULL)
+        return 0;
+    else
+        if ( MayorIgualFecha(DarFecha(l->info),f1) && MenorIgualFecha(DarFecha(l->info),f2) )
+            return 1 + ContarRevEntreFec(l->sig,f1,f2);
+        else
+            return ContarRevEntreFec(l->sig,f1,f2);
+
+
+}

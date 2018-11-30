@@ -41,3 +41,5 @@ void Bajar_Lista (ListRev lis , String nomArch);
 
 /*Precondicion: Debe existir el archivo*/
 void Levantar_Lista (ListRev &lis, String nomArch);
+
+int ContarRevEntreFec(ListRev l, Fecha f1, Fecha f2);

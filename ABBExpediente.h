@@ -2,6 +2,7 @@
 #define ABBEXPEDIENTE_H_INCLUDED
 
 #include "Expediente.h"
+#include "ListaRevision.h"
 
 typedef struct nodoN{Expediente info;
                     nodoN *hizq;
@@ -38,7 +39,7 @@ void Borrar_Minimo (Arbol &ABB);
 void Borrar (Arbol &ABB, int cod);
 
 /*Precodicion: ABB no vacio */
-void ListarExp(Arbol ABB);
+void ListarExp(Arbol ABB, Boolean Cabezal);
 
 void ListarMinMax(Arbol ABB);
 
@@ -51,5 +52,11 @@ void Bajar_ABB (Arbol ABB , String nomArch);
 
 /*Precondicion: Debe existir el archivo.*/
 void Levantar_ABB (Arbol &ABB, String nomArch);
+
+/*Precodicion: ABB no vacio */
+/* Si hay mas de un expediente con la misma cantidadad de revisiones
+muestra el expediente mas cercano a la raiz del abb*/
+int ExpConMasRev(Arbol ABB, ListRev lis, int MayorCant, int Codigo);
+
 
 #endif // ABBEXPEDIENTE_H_INCLUDED

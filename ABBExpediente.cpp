@@ -139,31 +139,45 @@ void Borrar (Arbol &ABB, int cod)
 	}
  }
 
-void ListarExp(Arbol ABB)
+void ListarExp(Arbol ABB, Boolean Cabezal)
 {
-	String caratula, nom, ape;
+    String caratula, nom, ape;
+	int largo=0,i=0;
+
+    if (Cabezal)
+        printf("CODIGO     CARATULA              ESCRIBANO                 PAGINAS\n");
+
+
 	if (ABB != NULL)
 	{
-		ListarExp(ABB -> hizq);
+		ListarExp(ABB -> hizq,FALSE);
 
-		printf("\t");
-		printf("Codigo expediente: %d",DarCodigo(ABB ->info));
-		printf(" | ");
-		printf("Caratula: ");
-		DarCaratula(ABB ->info, caratula);
-		print(caratula);
-		printf(" | ");
-		printf("Escribano: ");
-		DarNombreEscrib(ABB ->info, nom);
+
+
+		//Codigo
+        printf ("%-11d", DarCodigo(ABB->info));
+
+        //Caratula
+        DarCaratula(ABB->info,caratula);
+        print(caratula);
+        largo=strlar(caratula);
+        for (i=largo; i<22; i++)
+            printf(" ");
+
+        //Escribano
+        DarNombreEscrib(ABB ->info, nom);
 		DarApellidoEscrib(ABB ->info, ape);
-		print(nom);
+        print(nom);
 		printf(" ");
 		print(ape);
-		printf(" | ");
-		printf("Cant. Pag: %d", DarCantP(ABB ->info));
-		printf("\n");
+        largo=strlar(nom)+strlar(ape)+1;
+        for (i=largo; i<26; i++)
+            printf(" ");
 
-		ListarExp(ABB -> hder);
+        //Cant Paginas
+        printf("%d\n",DarCantP(ABB->info));
+
+		ListarExp(ABB -> hder,FALSE);
 	}
 }
 
@@ -171,44 +185,57 @@ void ListarMinMax(Arbol ABB)
 {
 	String caratula, nom, ape;
 	Expediente exmin, exmax;
+	int largo=0, i=0;
 
 	exmin = Minimo(ABB);
 
-	printf("\t");
-	printf("Codigo expediente: %d",exmin);
-	printf(" | ");
-	printf("Caratula: ");
+    printf("CODIGO     CARATULA              ESCRIBANO                 PAGINAS\n");
+
+	printf("%-11d",exmin);
+
 	DarCaratula(exmin, caratula);
 	print(caratula);
-	printf(" | ");
-	printf("Escribano: ");
+    largo=strlar(caratula);
+    for (i=largo; i<22; i++)
+        printf(" ");
+
+
 	DarNombreEscrib(exmin, nom);
 	DarApellidoEscrib(exmin, ape);
 	print(nom);
 	printf(" ");
 	print(ape);
-	printf(" | ");
-	printf("Cant. Pag: %d", DarCantP(exmin));
+	largo=strlar(nom)+strlar(ape)+1;
+    for (i=largo; i<26; i++)
+        printf(" ");
+
+	printf("%d", DarCantP(exmin));
 	printf("\n");
 
 	exmax = Maximo(ABB);
 
-	printf("\t");
-	printf("Codigo expediente: %d",exmax);
-	printf(" | ");
-	printf("Caratula: ");
+
+    printf("%-11d",exmax);
+
 	DarCaratula(exmax, caratula);
 	print(caratula);
-	printf(" | ");
-	printf("Escribano: ");
+    largo=strlar(caratula);
+    for (i=largo; i<22; i++)
+        printf(" ");
+
+
 	DarNombreEscrib(exmax, nom);
 	DarApellidoEscrib(exmax, ape);
 	print(nom);
 	printf(" ");
 	print(ape);
-	printf(" | ");
-	printf("Cant. Pag: %d", DarCantP(exmax));
+	largo=strlar(nom)+strlar(ape)+1;
+    for (i=largo; i<26; i++)
+        printf(" ");
+
+	printf("%d", DarCantP(exmax));
 	printf("\n");
+
 }
 
 int ExpxEscribano(Arbol ABB, String ape)
@@ -254,4 +281,20 @@ void Levantar_ABB (Arbol &ABB, String nomArch)
 		Levantar_Expediente(ex, f);
 	}
 	fclose (f);
+}
+
+int ExpConMasRev(Arbol ABB, ListRev lis, int MayorCant,int Codigo)
+{
+    int CurrCant=0;
+	if (ABB != NULL){
+
+        CurrCant = CantRevExp(lis,DarCodigo(ABB->info));
+        if (MayorCant < CurrCant){
+            MayorCant = CurrCant;
+            Codigo = DarCodigo(ABB->info);
+        }
+        Codigo = ExpConMasRev(ABB -> hizq,lis,MayorCant,Codigo);
+        Codigo = ExpConMasRev(ABB -> hder,lis,MayorCant,Codigo);
+	}
+return Codigo;
 }

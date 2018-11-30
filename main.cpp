@@ -1,5 +1,4 @@
 #include "ABBExpediente.h"
-#include "ListaRevision.h"
 #include "Menu.h"
 
 int main()
@@ -8,7 +7,7 @@ int main()
 	ListRev Lis;
     Expediente ex;
 	Revision rev;
-    int cod, opcion, Satis, inComp, Pend, cantExp;
+    int cod, opcion, Satis, inComp, Pend, cantExp, CodExp;
 	String ape;
 	Fecha f,f1,f2;
     InicializarArbol(ABB);
@@ -87,10 +86,10 @@ int main()
                 }
 			break;
 			case 4:
-				ListarExp(ABB);
+				ListarExp(ABB,TRUE);
 			break;
 			case 5:
-				ListarRev(Lis);
+				ListarRev(Lis,TRUE);
 			break;
 			case 6:
 				ListarMinMax(ABB);
@@ -127,13 +126,16 @@ int main()
 					printf("No se encontraron expedientes para dicho escribano");
 				}
 			break;
+			case 9:
+			    printf("Codigo expediente con mas Revisiones: %d",ExpConMasRev(ABB,Lis,0,0));
+            break;
 			case 10:
 			    printf("Ingrese primer fecha\n");
                 CargarFecha(f1);
                 printf("Ingrese segunda fecha\n");
                 CargarFecha(f2);
                 if (MenorIgualFecha(f1,f2))
-                    printf("Cantidad de revisiones: %d",ContarRevEntreFec(Lis,f1,f2));
+                    printf("Cantidad de revisiones: %d",CantRevEntreFec(Lis,f1,f2));
                 else
                     printf("Rango de fechas incorrecto");
 

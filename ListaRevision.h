@@ -26,7 +26,7 @@ Boolean EsValidaSis(ListRev lis, Fecha f);
 
 void BorrarRev (ListRev &lis, int cod);
 
-void ListarRev (ListRev lis);
+void ListarRev (ListRev lis,Boolean Cabezal);
 
 /* Precondición: lista NO vacía */
 Boolean TieneRev (ListRev lis, int cod);
@@ -42,4 +42,7 @@ void Bajar_Lista (ListRev lis , String nomArch);
 /*Precondicion: Debe existir el archivo*/
 void Levantar_Lista (ListRev &lis, String nomArch);
 
-int ContarRevEntreFec(ListRev l, Fecha f1, Fecha f2);
+int CantRevEntreFec(ListRev l, Fecha f1, Fecha f2);
+
+int CantRevExp(ListRev lis, int cod);
+

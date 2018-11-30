@@ -99,9 +99,15 @@ void BorrarRev (ListRev &lis, int cod)
 	}
 }
 
-void ListarRev (ListRev lis)
+void ListarRev(ListRev lis, Boolean Cabezal)
 {
+    int largo=0,i=0;
 	String desc;
+
+    if (Cabezal)
+        printf("FECHA       COD_EXPED  DESCRIPCION              EVALUACION\n");
+
+
 	if(lis == NULL)
 	{
 		printf("\tNo hay revisiones registradas\n");
@@ -110,33 +116,17 @@ void ListarRev (ListRev lis)
 	{
 		while(lis!=NULL)
 		{
-			printf("\t");
-			printf("Fecha: %d/%d/%d",DarFecha(lis->info));
-			printf(" | ");
-			printf("Descripcion: ");
-			DarDesc(lis->info,desc);
-			print(desc);
-			printf(" | ");
-			printf("Codigo expediente: %d",DarCodExpEnRev(lis->info));
-			printf(" | ");
-			printf("Evaluacion: ");
-			if(DarEv(lis->info) == Satisfactoria)
-			{
-				printf("Satisfactoria");
-			}
-			else
-			{
-				if(DarEv(lis->info) == Incompleta)
-				{
-					printf("Incompleta");
-				}
-				else
-				{
-					printf("Pendiente");
-				}
+		    printf("%02d/%02d/%d  ",DarFecha(lis->info));
+            printf("%-11d",DarCodExpEnRev(lis->info));
 
-			}
-			printf("\n");
+		    DarDesc(lis->info,desc);
+			print(desc);
+            largo=strlar(desc);
+            for (i=largo; i<25; i++)
+                printf(" ");
+
+            MostrarEvaluacion(DarEv(lis->info));
+            printf("\n");
 
 			lis = lis->sig;
 		}
@@ -161,39 +151,29 @@ Boolean TieneRev (ListRev lis, int cod)
 void ListarRevxExp(ListRev lis, int cod)
 {
 	String desc;
+	int largo=0,i=0;
+
+    printf("FECHA       COD_EXPED  DESCRIPCION              EVALUACION\n");
+
 	while(lis!=NULL)
 	{
 		if(DarCodExpEnRev(lis->info) == cod)
 		{
-			printf("\t");
-			printf("Fecha: %d/%d/%d",DarFecha(lis->info));
-			printf(" | ");
-			printf("Descripcion: ");
-			DarDesc(lis->info,desc);
-			print(desc);
-			printf(" | ");
-			printf("Codigo expediente: %d",cod);
-			printf(" | ");
-			printf("Evaluacion: ");
-			if(DarEv(lis->info) == Satisfactoria)
-			{
-				printf("Satisfactoria");
-			}
-			else
-			{
-				if(DarEv(lis->info) == Incompleta)
-				{
-					printf("Incompleta");
-				}
-				else
-				{
-					printf("Pendiente");
-				}
-			}
-			printf("\n");
+		   printf("%02d/%02d/%d  ",DarFecha(lis->info));
+            printf("%-11d",DarCodExpEnRev(lis->info));
 
-			lis = lis->sig;
+		    DarDesc(lis->info,desc);
+			print(desc);
+            largo=strlar(desc);
+            for (i=largo; i<25; i++)
+                printf(" ");
+
+            MostrarEvaluacion(DarEv(lis->info));
+            printf("\n");
+
+
 		}
+		lis = lis->sig;
 	}
 }
 
@@ -245,15 +225,26 @@ void Levantar_Lista (ListRev &lis, String nomArch)
 	fclose (f);
 }
 
-int ContarRevEntreFec(ListRev l, Fecha f1, Fecha f2)
+int CantRevEntreFec(ListRev l, Fecha f1, Fecha f2)
 {
     if (l == NULL)
         return 0;
     else
         if ( MayorIgualFecha(DarFecha(l->info),f1) && MenorIgualFecha(DarFecha(l->info),f2) )
-            return 1 + ContarRevEntreFec(l->sig,f1,f2);
+            return 1 + CantRevEntreFec(l->sig,f1,f2);
         else
-            return ContarRevEntreFec(l->sig,f1,f2);
+            return CantRevEntreFec(l->sig,f1,f2);
 
 
+}
+
+int CantRevExp(ListRev lis, int cod)
+{
+    int cant=0;
+	while(lis!=NULL){
+		if(DarCodExpEnRev(lis->info) == cod)
+            cant++;
+        lis = lis->sig;
+	}
+return cant;
 }

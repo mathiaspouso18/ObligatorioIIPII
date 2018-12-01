@@ -288,13 +288,18 @@ int ExpConMasRev(Arbol ABB, ListRev lis, int MayorCant,int Codigo)
     int CurrCant=0;
 	if (ABB != NULL){
 
+
+        Codigo = ExpConMasRev(ABB -> hder,lis,MayorCant,Codigo);
+
         CurrCant = CantRevExp(lis,DarCodigo(ABB->info));
         if (MayorCant < CurrCant){
             MayorCant = CurrCant;
             Codigo = DarCodigo(ABB->info);
         }
+
         Codigo = ExpConMasRev(ABB -> hizq,lis,MayorCant,Codigo);
-        Codigo = ExpConMasRev(ABB -> hder,lis,MayorCant,Codigo);
+
+
 	}
 return Codigo;
 }

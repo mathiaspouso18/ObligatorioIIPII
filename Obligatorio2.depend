@@ -203,3 +203,72 @@
 1543697821 source:f:\codeblocks projects\obligatorioiipii\menu.cpp
 	"Menu.h"
 
+1543773065 source:c:\users\majo\documents\obligatorioiipii\abbexpediente.cpp
+	"ABBExpediente.h"
+
+1543773065 c:\users\majo\documents\obligatorioiipii\abbexpediente.h
+	"Expediente.h"
+	"ListaRevision.h"
+
+1543773065 c:\users\majo\documents\obligatorioiipii\expediente.h
+	"Escribano.h"
+
+1543773065 c:\users\majo\documents\obligatorioiipii\escribano.h
+	"String.h"
+
+1543773065 c:\users\majo\documents\obligatorioiipii\string.h
+	<stdio.h>
+	"Boolean.h"
+
+1543773065 c:\users\majo\documents\obligatorioiipii\boolean.h
+
+1543773065 c:\users\majo\documents\obligatorioiipii\listarevision.h
+	"Revision.h"
+
+1543773065 c:\users\majo\documents\obligatorioiipii\revision.h
+	"Fecha.h"
+	"String.h"
+	"Evaluacion.h"
+
+1543773065 c:\users\majo\documents\obligatorioiipii\fecha.h
+	<stdio.h>
+	"Boolean.h"
+
+1543773065 c:\users\majo\documents\obligatorioiipii\evaluacion.h
+	<stdio.h>
+
+1543773065 source:c:\users\majo\documents\obligatorioiipii\boolean.cpp
+	"Boolean.h"
+
+1543773065 source:c:\users\majo\documents\obligatorioiipii\escribano.cpp
+	"Escribano.h"
+
+1543773065 source:c:\users\majo\documents\obligatorioiipii\evaluacion.cpp
+	"Evaluacion.h"
+
+1543773065 source:c:\users\majo\documents\obligatorioiipii\expediente.cpp
+	"Expediente.h"
+
+1543773065 source:c:\users\majo\documents\obligatorioiipii\fecha.cpp
+	"Fecha.h"
+
+1543773065 source:c:\users\majo\documents\obligatorioiipii\revision.cpp
+	"Revision.h"
+
+1543773065 source:c:\users\majo\documents\obligatorioiipii\string.cpp
+	"String.h"
+
+1543778153 source:c:\users\majo\documents\obligatorioiipii\listarevision.cpp
+	"ListaRevision.h"
+
+1543778153 source:c:\users\majo\documents\obligatorioiipii\main.cpp
+	"ABBExpediente.h"
+	"Menu.h"
+	<stdlib.h>
+
+1543773065 c:\users\majo\documents\obligatorioiipii\menu.h
+	<stdio.h>
+
+1543778134 source:c:\users\majo\documents\obligatorioiipii\menu.cpp
+	"Menu.h"
+

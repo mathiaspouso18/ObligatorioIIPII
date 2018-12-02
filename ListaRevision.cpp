@@ -111,7 +111,7 @@ void ListarRev(ListRev lis, Boolean Cabezal)
 	else
 	{
         if (Cabezal)
-            printf("FECHA       COD_EXPED  DESCRIPCION              EVALUACION\n");
+            printf("FECHA       COD_EXPED  DESCRIPCION               EVALUACION\n");
 
 		while(lis!=NULL)
 		{
@@ -120,6 +120,7 @@ void ListarRev(ListRev lis, Boolean Cabezal)
 
 		    DarDesc(lis->info,desc);
 			print(desc);
+			printf(" ");
             largo=strlar(desc);
             for (i=largo; i<25; i++)
                 printf(" ");

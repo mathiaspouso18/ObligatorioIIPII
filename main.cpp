@@ -62,7 +62,7 @@ int main()
                         }
                         else
                         {
-                            printf("La fecha es menor a la de la ultima revision ingresada");
+                            printf("La fecha es menor a la de la ultima revision ingresada\n");
                         }
 					}
 					else
@@ -77,21 +77,22 @@ int main()
                 }
 			break;
 			case 3:
-			    printf("Pantalla Eliminacion de expedientes\n");
+			    printf("Pantalla Eliminacion de expedientes\n\n");
 				printf("Ingrese codigo del expediente: ");
                 scanf("%d", &cod);
 				if(ExisteExp(cod, ABB))
                 {
 					Borrar (ABB, cod);
 					BorrarRev(Lis, cod);
+					printf("\nExpediente eliminado!\n");
                 }
                 else
                 {
-                    printf("El expediente no existe!");
+                    printf("\nEl expediente no existe!\n");
                 }
 			break;
 			case 4:
-			    printf("Pantalla Listado de expedientes\n\n");
+			    printf("Pantalla Listado de expedientes\n");
 				ListarExp(ABB,TRUE);
 			break;
 			case 5:
@@ -152,24 +153,22 @@ int main()
                     printf("\nRango de fechas incorrecto!\n");
             break;
 			case 11:
-			    printf("Pantalla Conteo de revisiones por tipo de evaluacion\n\n");
+			    printf("Pantalla Conteo de revisiones por tipo de evaluacion\n");
 				if(!EsVaciaLis(Lis))
 				{
 					RevxEvaluacion(Lis, Satis, inComp, Pend);
-					printf("\nSatisfactorias: %d | Incompletas: %d | Pendientes: %d",Satis,inComp,Pend);
+					printf("\nSatisfactorias: %d | Incompletas: %d | Pendientes: %d\n",Satis,inComp,Pend);
 				}
 				else
 				{
-					printf("No existen revisiones ingresadas en el sistema");
+					printf("\nNo existen revisiones ingresadas en el sistema\n");
 				}
 			break;
         }
 
     }while(opcion != 0);
 
-    printf("ADIOS!\n");
-
-    opcion = -1;//limpio la variable dejandola en -1;
+    printf("ADIOS!\n\nPresione enter para salir.\n");
 
 	Bajar_ABB (ABB, "Expedientes.dat");
 	Bajar_Lista (Lis , "Revisiones.dat");

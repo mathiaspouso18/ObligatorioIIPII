@@ -32,7 +32,7 @@ Expediente Maximo (Arbol ABB);
 /* PRECONDICION: ABB no vacio */
 Expediente Minimo (Arbol ABB);
 
-/* Precondición : el árbol a NO está vacío */
+/* Precondición : el árbol NO está vacío */
 void Borrar_Minimo (Arbol &ABB);
 
 /* Precondición : el valor cod existe en el árbol a */
@@ -41,6 +41,7 @@ void Borrar (Arbol &ABB, int cod);
 /*Precodicion: ABB no vacio */
 void ListarExp(Arbol ABB, Boolean Cabezal);
 
+/*Precodicion: ABB no vacio */
 void ListarMinMax(Arbol ABB);
 
 /*Precodicion: ABB no vacio */

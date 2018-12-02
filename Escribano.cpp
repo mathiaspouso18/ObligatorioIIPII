@@ -23,3 +23,9 @@ void CrearEscribano(Escribano &esc)
     strcop(esc.apellido, s2);
 }
 
+void LlenarEscribano(Escribano &esc, String Nombre, String Apellido)
+{
+    strcop(esc.nombre, Nombre);
+    strcop(esc.apellido, Apellido);
+}
+

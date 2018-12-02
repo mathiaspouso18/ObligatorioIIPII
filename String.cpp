@@ -108,14 +108,14 @@ Boolean streq(String s1, String s2)
 
 void Bajar_String (String s, FILE * f)
 {
- int i=0;
- while (s[i] != '\0')
- {
- fwrite (&s[i], sizeof(char), 1, f);
- i++;
- }
- // escribo el '\0'
- fwrite (&s[i], sizeof(char), 1, f);
+     int i=0;
+     while (s[i] != '\0')
+     {
+     fwrite (&s[i], sizeof(char), 1, f);
+     i++;
+     }
+     // escribo el '\0'
+     fwrite (&s[i], sizeof(char), 1, f);
 }
 
 void Levantar_String (String &s, FILE * f)

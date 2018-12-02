@@ -23,7 +23,7 @@ void CrearRevision(Revision &r, int cod, Fecha f)
     Evaluacion eva;
     printf("Ingrese la descripcion: ");
     scan(s);
-    printf("Ingrese evaluacion 1-Satisfactoria; 2-Incompleta; 3-Pendiente: ");
+    printf("Ingrese evaluacion 1 - Satisfactoria; 2 - Incompleta; 3 - Pendiente: ");
     scanf("%d", &a);
     switch(a)
     {
@@ -39,6 +39,7 @@ void CrearRevision(Revision &r, int cod, Fecha f)
     r.codigoExp = cod;
     r.eval = eva;
     strcop(r.descripcion, s);
+    printf("\nRevision creada con exito!\n");
 }
 
 void Bajar_Revision(Revision rev, FILE *f)
@@ -58,12 +59,13 @@ void Bajar_Revision(Revision rev, FILE *f)
 void Levantar_Revision (Revision &rev, FILE * f)
 {
 	Fecha fec;
-	fread (&fec.dia,sizeof(int), 1, f);
-	fread (&fec.mes,sizeof(int), 1, f);
-	fread (&fec.anio,sizeof(int), 1, f);
+	int dia, mes, anio;
+	fread (&dia,sizeof(int), 1, f);
+	fread (&mes,sizeof(int), 1, f);
+	fread (&anio,sizeof(int), 1, f);
+	LlenarFecha(fec, dia, mes, anio);
 	rev.fecRea = fec;
 	fread (&rev.codigoExp, sizeof(int), 1, f);
 	fread (&rev.eval, sizeof(Evaluacion), 1, f);
-	strcrear (rev.descripcion);
 	Levantar_String (rev.descripcion, f);
 }

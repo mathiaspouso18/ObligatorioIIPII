@@ -15,7 +15,7 @@ int DarDiaRev(Revision r)
     return DarDia(r.fecRea);
 }
 
-void Crear(ListRev &lis)
+void InicializarLista(ListRev &lis)
 {
 	lis = NULL;
 }
@@ -104,16 +104,15 @@ void ListarRev(ListRev lis, Boolean Cabezal)
     int largo=0,i=0;
 	String desc;
 
-    if (Cabezal)
-        printf("FECHA       COD_EXPED  DESCRIPCION              EVALUACION\n");
-
-
 	if(lis == NULL)
 	{
-		printf("\tNo hay revisiones registradas\n");
+		printf("No hay revisiones registradas\n");
 	}
 	else
 	{
+        if (Cabezal)
+            printf("FECHA       COD_EXPED  DESCRIPCION              EVALUACION\n");
+
 		while(lis!=NULL)
 		{
 		    printf("%02d/%02d/%d  ",DarFecha(lis->info));
@@ -130,9 +129,7 @@ void ListarRev(ListRev lis, Boolean Cabezal)
 
 			lis = lis->sig;
 		}
-
 	}
-
 }
 
 Boolean TieneRev (ListRev lis, int cod)
@@ -153,7 +150,7 @@ void ListarRevxExp(ListRev lis, int cod)
 	String desc;
 	int largo=0,i=0;
 
-    printf("FECHA       COD_EXPED  DESCRIPCION              EVALUACION\n");
+    printf("\nFECHA       COD_EXPED  DESCRIPCION              EVALUACION\n");
 
 	while(lis!=NULL)
 	{
@@ -215,12 +212,12 @@ void Bajar_Lista (ListRev lis , String nomArch)
 void Levantar_Lista (ListRev &lis, String nomArch)
 {
 	FILE * f = fopen (nomArch, "rb");
-	Revision buffer;
-	Levantar_Revision (buffer, f);
-	 while (!feof(f))
+	Revision rev;
+	Levantar_Revision (rev, f);
+    while (!feof(f))
 	{
-		InsBack(lis, buffer);
-		Levantar_Revision (buffer, f);
+		InsBack(lis, rev);
+		Levantar_Revision (rev, f);
 	}
 	fclose (f);
 }
@@ -230,7 +227,7 @@ int CantRevEntreFec(ListRev l, Fecha f1, Fecha f2)
     if (l == NULL)
         return 0;
     else
-        if ( MayorIgualFecha(DarFecha(l->info),f1) && MenorIgualFecha(DarFecha(l->info),f2) )
+        if (MayorIgualFecha(DarFecha(l->info),f1) && MenorIgualFecha(DarFecha(l->info),f2) )
             return 1 + CantRevEntreFec(l->sig,f1,f2);
         else
             return CantRevEntreFec(l->sig,f1,f2);

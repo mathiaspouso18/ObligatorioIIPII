@@ -19,21 +19,21 @@ void CargarFecha(Fecha &f)
 {
     Fecha f2;
 
-    printf("\tIngrese dia: ");
+    printf("Ingrese dia: ");
     scanf("%d", &f2.dia);
-    printf("\tIngrese mes: ");
+    printf("Ingrese mes: ");
     scanf("%d", &f2.mes);
-    printf("\tIngrese anio: ");
+    printf("Ingrese anio: ");
     scanf("%d", &f2.anio);
 
     while(!EsValida(f2))
     {
-        printf("\tLa fecha ingresada no es valida! Ingrese nuevamente\n\n");
-        printf("\tIngrese dia: ");
+        printf("La fecha ingresada no es valida! Ingrese nuevamente\n\n");
+        printf("Ingrese dia: ");
         scanf("%d", &f2.dia);
-        printf("\tIngrese mes: ");
+        printf("Ingrese mes: ");
         scanf("%d", &f2.mes);
-        printf("\tIngrese anio: ");
+        printf("Ingrese anio: ");
         scanf("%d", &f2.anio);
     }
     f = f2;
@@ -42,6 +42,13 @@ void CargarFecha(Fecha &f)
 void DesplegarFecha(Fecha f)
 {
     printf("%d/%d/%d", f.dia, f.mes, f.anio);
+}
+
+void LlenarFecha(Fecha &f, int dia, int mes, int anio)
+{
+    f.dia = dia;
+    f.mes = mes;
+    f.anio = anio;
 }
 
 Boolean EsValida(Fecha f)
@@ -92,6 +99,7 @@ Boolean EsValida(Fecha f)
 Boolean MenorIgualFecha(Fecha f1, Fecha f2)
 {
 Boolean menorigual = FALSE;
+
     if (f1.anio < f2.anio)
         menorigual = TRUE;
     else
@@ -110,7 +118,7 @@ Boolean menorigual = FALSE;
             }
         }
     }
-return menorigual;
+    return menorigual;
 }
 
 Boolean MayorIgualFecha(Fecha f1, Fecha f2)

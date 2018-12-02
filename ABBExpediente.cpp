@@ -145,15 +145,12 @@ void ListarExp(Arbol ABB, Boolean Cabezal)
 	int largo=0,i=0;
 
     if (Cabezal)
-        printf("CODIGO     CARATULA              ESCRIBANO                 PAGINAS\n");
+        printf("\nCODIGO     CARATULA              ESCRIBANO                 PAGINAS\n");
 
 
 	if (ABB != NULL)
 	{
 		ListarExp(ABB -> hizq,FALSE);
-
-
-
 		//Codigo
         printf ("%-11d", DarCodigo(ABB->info));
 
@@ -247,9 +244,9 @@ int ExpxEscribano(Arbol ABB, String ape)
 		String apeexp;
 		DarApellidoEscrib(ABB->info, apeexp);
 		if(streq(apeexp, ape))
-		{
 			return 1 + ExpxEscribano(ABB->hizq, ape) + ExpxEscribano(ABB->hder, ape);
-		}
+        else
+            return ExpxEscribano(ABB->hizq, ape) + ExpxEscribano(ABB->hder, ape);;
 	}
 }
 
@@ -301,5 +298,5 @@ int ExpConMasRev(Arbol ABB, ListRev lis, int MayorCant,int Codigo)
 
 
 	}
-return Codigo;
+    return Codigo;
 }

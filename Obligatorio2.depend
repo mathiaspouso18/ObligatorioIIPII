@@ -1,30 +1,39 @@
 # depslib dependency file v1.0
-1353751060 source:f:\codeblocks projects\obligatorioiipii\main.cpp
-	<iostream>
+1543716033 source:f:\codeblocks projects\obligatorioiipii\main.cpp
+	"ABBExpediente.h"
+	"Menu.h"
+	<stdlib.h>
 
-1543165349 source:f:\codeblocks projects\obligatorioiipii\fecha.cpp
+1543711447 source:f:\codeblocks projects\obligatorioiipii\fecha.cpp
 	"Fecha.h"
 
-1543173515 f:\codeblocks projects\obligatorioiipii\fecha.h
+1543708610 f:\codeblocks projects\obligatorioiipii\fecha.h
+	<stdio.h>
+	"Boolean.h"
 
 1543167128 source:f:\codeblocks projects\obligatorioiipii\boolean.cpp
 	"Boolean.h"
 
 1543167121 f:\codeblocks projects\obligatorioiipii\boolean.h
 
-1543167678 source:f:\codeblocks projects\obligatorioiipii\string.cpp
+1543694986 source:f:\codeblocks projects\obligatorioiipii\string.cpp
 	"String.h"
 
-1543167696 f:\codeblocks projects\obligatorioiipii\string.h
+1543691424 f:\codeblocks projects\obligatorioiipii\string.h
 	<stdio.h>
+	"Boolean.h"
 
-1543171692 source:f:\codeblocks projects\obligatorioiipii\escribano.cpp
+1543709407 source:f:\codeblocks projects\obligatorioiipii\escribano.cpp
+	"Escribano.h"
 
-1543171975 source:f:\codeblocks projects\obligatorioiipii\evaluacion.cpp
+1543691424 source:f:\codeblocks projects\obligatorioiipii\evaluacion.cpp
+	"Evaluacion.h"
 
-1543171672 source:f:\codeblocks projects\obligatorioiipii\expediente.cpp
+1543709970 source:f:\codeblocks projects\obligatorioiipii\expediente.cpp
+	"Expediente.h"
 
-1543172017 source:f:\codeblocks projects\obligatorioiipii\revision.cpp
+1543710941 source:f:\codeblocks projects\obligatorioiipii\revision.cpp
+	"Revision.h"
 
 1543536384 source:c:\users\java\desktop\obligatorioiipii-master\abbexpediente.cpp
 	"ABBExpediente.h"
@@ -160,4 +169,37 @@
 
 1543619522 source:e:\obligatorioiipii\listarevision.cpp
 	"ListaRevision.h"
+
+1543715780 source:f:\codeblocks projects\obligatorioiipii\abbexpediente.cpp
+	"ABBExpediente.h"
+
+1543691424 f:\codeblocks projects\obligatorioiipii\abbexpediente.h
+	"Expediente.h"
+	"ListaRevision.h"
+
+1543691424 f:\codeblocks projects\obligatorioiipii\expediente.h
+	"Escribano.h"
+
+1543707787 f:\codeblocks projects\obligatorioiipii\escribano.h
+	"String.h"
+
+1543708981 f:\codeblocks projects\obligatorioiipii\listarevision.h
+	"Revision.h"
+
+1543691424 f:\codeblocks projects\obligatorioiipii\revision.h
+	"Fecha.h"
+	"String.h"
+	"Evaluacion.h"
+
+1543691424 f:\codeblocks projects\obligatorioiipii\evaluacion.h
+	<stdio.h>
+
+1543716057 source:f:\codeblocks projects\obligatorioiipii\listarevision.cpp
+	"ListaRevision.h"
+
+1543708896 f:\codeblocks projects\obligatorioiipii\menu.h
+	<stdio.h>
+
+1543697821 source:f:\codeblocks projects\obligatorioiipii\menu.cpp
+	"Menu.h"
 

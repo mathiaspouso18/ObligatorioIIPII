@@ -4,7 +4,7 @@ typedef struct nodo_rev{Revision info;
 						nodo_rev * sig;} Nodo;
 typedef Nodo * ListRev;
 
-void Crear(ListRev &lis);
+void InicializarLista(ListRev &lis);
 
 int DarAnioRev(Revision r);
 int DarMesRev(Revision r);
